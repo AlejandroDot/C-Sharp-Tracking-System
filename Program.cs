@@ -5,7 +5,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 
-namespace DubaiPolice 
+namespace TrackingSystem 
 {
     class Database {
 
@@ -294,7 +294,7 @@ namespace DubaiPolice
             FilterDefinition<BsonDocument> Filter;
             BsonArray History = null;
             Int32 Beacon = 0;
-            String URL = "http://dubaipolice/Client.php?action=trace";
+            String URL = "http://localhost/Client.php?action=trace";
         //  Connect database
             var Client = new MongoClient("mongodb://" + ConfigurationManager.AppSettings["MongoDB.Username"] + ":" + ConfigurationManager.AppSettings["MongoDB.Password"] + "@" + ConfigurationManager.AppSettings["MongoDB.Server"] + ":" + ConfigurationManager.AppSettings["MongoDB.Port"]);
             var Database = Client.GetDatabase(ConfigurationManager.AppSettings["MongoDB.Database"]);
